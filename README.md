@@ -17,4 +17,59 @@ Wenlan 2.0论文：[WenLan 2.0: Make AI Imagine via a Multimodal Foundation Mode
 3. 视觉编码器和文本编码器可分别独立运行，有利于实际生产环境中的部署。 
 4. 三亿通用图文对+50万爱奇艺视频联合训练，强大的泛化性与通用性。
 
-## 3月20日开源，敬请期待
+
+## 运行环境
+```
+python 3.8
+torch 1.8
+jsonlines
+tqdm
+easydict
+torchvision
+transformers
+timm
+```
+
+## 模型下载
+敬请期待
+
+## 快速使用
+
+1. 安装wenlan-video-public库
+```
+pip install wenlan-video-public==1.0.2
+```
+
+2. 导入模型
+
+```
+from wenlan_video import load_wenlan_model
+
+# load_checkpoint 下载好的模型地址
+# cfg_file github目录下moco_box.yaml文件地址
+model = load_wenlan_model(load_checkpoint, cfg_file, device=device)
+```
+
+3. 读取视频/文本
+
+```
+from wenlan_video import wenlan_transforms
+wenlan_transforms = wenlan_transforms()
+
+# VIDEO_PATH为视频抽帧好的帧（jpg, png），帧数大于10，命名按顺序标号
+video, video_boxes = wenlan_transforms.video_transform(VIDEO_PATH, device=device)
+text, textMask = wenlan_transforms.text_transform(‘Hello Wenlan’, device=device)
+```
+
+4. 同时抽取视频/文本特征
+```
+videoFea, textFea = model(video, video_boxes, text.unsqueeze(0), textMask.unsqueeze(0))
+```
+
+5. 分别抽取视频/文本特征
+```
+videoFea = model.encode_video(videoFea, video_boxes)
+textFea = model.encode_text(texts.unsqueeze(0), maskTexts.unsqueeze(0))
+```
+
+## Have Fun!
