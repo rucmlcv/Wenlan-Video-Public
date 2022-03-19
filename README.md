@@ -31,7 +31,7 @@ timm
 ```
 
 ## 模型下载
-敬请期待
+https://drive.google.com/file/d/1iHt06QSiKOLXsybOatMUtggTwTXXSca8/view?usp=sharing
 
 ## 快速使用
 
