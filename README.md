@@ -2,7 +2,7 @@
 
 Wenlan-Video-Public是基于Wenlan 2.0（首个中文通用图文多模态大规模预训练模型）的文澜视频多模态预训练模型。
 
-BriVL论文：[WenLan: Bridging Vision and Language by Large-Scale Multi-Modal Pre-Training](https://arxiv.org/abs/2103.06561)
+Wenlan 1.0论文：[WenLan: Bridging Vision and Language by Large-Scale Multi-Modal Pre-Training](https://arxiv.org/abs/2103.06561)
 
 Wenlan 2.0论文：[WenLan 2.0: Make AI Imagine via a Multimodal Foundation Model](https://arxiv.org/abs/2110.14378)
 
