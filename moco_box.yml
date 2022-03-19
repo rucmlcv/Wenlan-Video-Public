@@ -1,0 +1,46 @@
+MODEL:
+    NAME: VL
+    MODE: coco
+
+    ENCODER: 'hfl/chinese-roberta-wwm-ext-large'
+
+    POS_DNCODER: False
+    POSITION_DROP: 0.0
+    IMG_FEATURE_DIM: 2560     
+
+    IMG_TRANSFORMER_HEAD: 4
+    IMG_TRANSFORMER_LAYER: 4    # 3.0-v0: 1
+    MAX_IMG_LEN: 26
+
+
+    TEXT_FEATURE_DIM: 1024   
+    TEXT_TRANSFORMER_HEAD: 4
+    TEXT_TRANSFORMER_LAYER: 4   
+
+
+    HIDDEN_DIM_1: 2560
+    HIDDEN_DIM_2: 2560
+    MAX_TEXT_LEN: 80  
+    COTRANSFORMER_CFG: [1, 3, 2048, 2048, 2048, 2048] 
+
+    FIX_ENCODER: True
+    IS_EXTRACT: False
+    CNN: "tf_efficientnet_b7_ns"  
+    
+    IMG_SIZE: 384
+    
+    GRID_SIZE: [1, 5]     
+    ROI_GRID_SIZE: 4      
+    num_frame: 10
+    num_clip: 2
+    
+DATASET:
+  NAME: 'MSRDataset_boxes'
+  DATADIR: '/data1/xyb'
+  JSONPATH: 'xyb_all_bbox.jsonl'
+  WORKERS: 8
+
+
+OPTIMIZATION:
+    EPOCH: 200
+    BATCH_SIZE: 1
