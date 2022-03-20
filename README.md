@@ -32,6 +32,7 @@ timm
 
 ## 模型下载
 https://pan.baidu.com/s/1TbSqCEKquxndWWv9yUECMg?pwd=31pf
+或
 https://drive.google.com/file/d/1iHt06QSiKOLXsybOatMUtggTwTXXSca8/view?usp=sharing
 
 ## 快速使用
